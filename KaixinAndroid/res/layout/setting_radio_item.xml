@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:orientation="horizontal">
+	<ImageView android:id="@+id/setting_item_icon"
+		style="@style/SettingFragment.Icon" />
+	<RelativeLayout style="@style/SettingFragment">
+		<com.gaya3d.android.ui.SettingInfoFragment 
+			android:id="@+id/setting_info_fragment"
+			style="@style/SettingFragment.Info"
+			android:layout_centerVertical="true" />
+		<RadioButton android:id="@+id/setting_radio_item_radio"
+			style="@style/SettingFragment.Right" />
+	</RelativeLayout>
+</LinearLayout>

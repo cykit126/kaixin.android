@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="com.gaya3d.android.ui.SettingItem"> 
+		<attr name="icon" format="reference" />
+        <attr name="title" format="string" />  
+        <attr name="description" format="string" />
+        <attr name="checked" format="boolean" />
+        <attr name="container_indicator" format="reference" />
+        <attr name="value" format="string" />
+        <attr name="highlight" format="reference" />
+        <attr name="highlightOnTop" format="boolean" />
+    </declare-styleable>
+    <dimen name="setting_item_title_height">20dp</dimen>
+    <dimen name="setting_item_desc_height">20dp</dimen>
+    <dimen name="setting_item_left_width">200dp</dimen>
+</resources>

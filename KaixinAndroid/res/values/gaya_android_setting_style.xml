@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="SettingItem">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:background">@color/background</item>
+	</style>
+	<style name="SettingFragment">
+	    <item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_height">wrap_content</item>
+	</style>
+	<style name="SettingFragment.Icon">
+	</style>
+	<style name="SettingFragment.Info">
+	</style>
+	<style name="SettingFragment.Title">
+		<item name="android:textColor">@color/title</item>
+		<item name="android:textSize">20dp</item>
+	</style>
+	<style name="SettingFragment.Description">
+		<item name="android:textColor">@color/description</item>
+		<item name="android:textSize">12dp</item>
+		<item name="android:layout_alignParentLeft">true</item>
+	</style>
+    <style name="SettingFragment.Right">
+    	<item name="android:layout_alignParentRight">true</item>
+    	<item name="android:focusable">false</item>
+    	<item name="android:clickable">false</item>
+    </style>
+    <style name="SettingItem.Divider">
+    	<item name="android:layout_height">1dp</item>
+    	<item name="android:background">#BBB</item>
+    </style>
+</resources>

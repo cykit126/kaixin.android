@@ -104,7 +104,11 @@ public class IntentDispatcher {
     public void registerHandlers(final Object object) {
         try {
             final Class<?> klass = object.getClass();
+            
+            Log.d("method count of " + klass.getName() + ":" + klass.getDeclaredMethods().length);
+            
             for (final Method m : klass.getDeclaredMethods()) {
+            	Log.d("method:" + m.getName());
                 final IntentHandler ih = m.getAnnotation(IntentHandler.class);
                 if (ih != null) {
                     final Handler handler = new HandlerProxy(object) {
@@ -126,11 +130,14 @@ public class IntentDispatcher {
                     };
                     Log.i("Register handler, action: " + ih.action() + ", method: " + klass.getName() + "." + m.getName(), Log.TAG);
                     registerHandler(ih.action(), handler);
+                } else {
+                	Log.d("Annotation of method not found, " + m.getName());
                 }
             }
         }
         catch (final Exception e) {
-            Log.w(e.getMessage(), Log.TAG);
+        	e.printStackTrace();
+            Log.w(e.getMessage());
         }
     }
 

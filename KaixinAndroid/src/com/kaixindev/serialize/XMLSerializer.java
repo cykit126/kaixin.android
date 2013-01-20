@@ -22,7 +22,7 @@ import com.kaixindev.core.XMLUtil;
  * @author Wilbur Luo
  */
 public class XMLSerializer implements Serializer {
-    private static final String ROOT_NAME = "Table";
+    private static final String ROOT_NAME = "data";
     private static final String ARRAY_ITEM = "item";
     private static final String PROPERTY_TYPE = "type";
     
@@ -42,6 +42,7 @@ public class XMLSerializer implements Serializer {
             return unserialize(doc.getDocumentElement());
         }
         catch (Exception e) {
+        	e.printStackTrace();
             return null;
         }
     }

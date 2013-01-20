@@ -2,11 +2,13 @@ package com.kaixindev.android;
 
 import java.io.File;
 
-import com.kaixindev.core.StringUtil;
-
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
+import android.os.Process;
+
+import com.kaixindev.core.StringUtil;
 
 /**
  * Application utility, such as installation, uninstallation and so on.
@@ -64,7 +66,29 @@ public class Application {
         
         return true;
     }    
+    
+    
+    public static String getVersionName(Context context) {
+    	try {
+			return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
+			return "";
+		}
+    }
+    
+    public static int getVersionCode(Context context) {
+    	try {
+			return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
+			return -1;
+		}
+    }
 
+    public static void quit() {
+    	Process.killProcess(Process.myPid());
+    }
 }
 
 
